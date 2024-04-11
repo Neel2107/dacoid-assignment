@@ -1,0 +1,27 @@
+export const calenderData = [
+    {
+        id:1,
+        day:"Sun",
+        date:5
+    },
+    {
+        id:2,
+        day:"Mon",
+        date:6
+    },
+    {
+        id:3,
+        day:"Tue",
+        date:7
+    },
+    {
+        id:4,
+        day:"Wed",
+        date:8
+    },
+    {
+        id:5,
+        day:"Thu",
+        date:9
+    },
+]
