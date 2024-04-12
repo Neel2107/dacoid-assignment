@@ -26,7 +26,9 @@ const Page = () => {
           if you give up now you will be in pain forever
         </p>
       </div>
+      <Link href={"/create-an-account"}>
 
+     
       <div className="absolute right-5 bottom-10 h-14 w-14 rounded-full flex items-center justify-center">
         <svg
           className="absolute  h-16 w-16 rounded-full"
@@ -61,6 +63,7 @@ const Page = () => {
           />
         </div>
       </div>
+      </Link>
     </div>
   );
 };

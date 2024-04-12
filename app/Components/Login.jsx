@@ -2,14 +2,14 @@ import React from "react";
 import { Button, ButtonGroup } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-const Login = ({ btnText, lastText, option, optionLink, btnLink }) => {
+const Login = ({ btnText, lastText, option, optionLink, onClick }) => {
   return (
     <div className="absolute bottom-0 flex flex-col gap-4 p-4 py-5 w-full ">
-      <Link href={btnLink}>
-        <Button className="bg-gradient-to-r from-[#95BEFF] to-[#7B91FF] text-white w-full font-semibold  py-6">
+     
+        <Button onClick={onClick} className="bg-gradient-to-r from-[#95BEFF] to-[#7B91FF] text-white w-full font-semibold  py-6">
           {btnText}
         </Button>
-      </Link>
+    
 
       <div className=" flex flex-row items-center gap-2">
         <div className="h-[1px] bg-zinc-400 flex-1" />

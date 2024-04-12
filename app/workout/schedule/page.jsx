@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { roboto } from "../layout";
 import { goalsList } from "@/public/your-goal/goalsList";
@@ -9,12 +10,14 @@ import { Switch } from "@nextui-org/react";
 import { calenderData } from "@/public/schedule/calenderData";
 import { quicksand } from "@/app/layout";
 import { timelineData } from "@/public/schedule/timelineData";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const route = useRouter();
   return (
     <div className="flex flex-col bg-[#fcfcfc] py-4 gap-4 min-h-screen relative">
       <div className="flex flex-row mt-5 w-full items-center justify-between px-4">
-        <div className="p-1 rounded-md bg-[#f1f1f1]">
+        <div onClick={() => route.back()} className="p-1 rounded-md bg-[#f1f1f1]">
           <Image
             src={"/schedule/left-arrow.svg"}
             width={20}
