@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { roboto } from "../layout";
 import { goalsList } from "@/public/your-goal/goalsList";
@@ -17,7 +17,7 @@ const Page = () => {
     } else {
       route.push("/workout/tracker");
     }
-  }
+  };
   return (
     <div className="flex flex-col bg-[#fcfcfc] p-4 gap-4 min-h-screen relative">
       <Toaster position="top-center" reverseOrder={false} />
@@ -27,20 +27,43 @@ const Page = () => {
 
       <div className="w-full mt-10 flex flex-col gap-4 ">
         {goalsList.map((goal) => (
+          // <div
+          //   className="w-full bg-[#f1f1f1] rounded-md p-4 flex flex-row items-center justify-between"
+          //   key={goal.id}
+          // >
+          //   <span className="text-sm font-medium">{goal.title}</span>
+
+          //   <Checkbox
+          //     onChange={(e) => {
+          //       if (e.target.checked) {
+          //         setSelectedGoals([...selectedGoals, goal.id]);
+          //       } else {
+          //         setSelectedGoals(selectedGoals.filter((id) => id !== goal.id));
+          //       }
+          //     }}
+          //   />
+          // </div>
+
           <div
-            className="w-full bg-[#f1f1f1] rounded-md p-4 flex flex-row items-center justify-between"
+            className="w-full bg-[#f1f1f1] rounded-md p-4 flex flex-row items-center justify-between cursor-pointer"
             key={goal.id}
+            onClick={() => {
+              if (selectedGoals.includes(goal.id)) {
+                setSelectedGoals(selectedGoals.filter((id) => id !== goal.id));
+              } else {
+                setSelectedGoals([...selectedGoals, goal.id]);
+              }
+            }}
           >
             <span className="text-sm font-medium">{goal.title}</span>
 
             <Checkbox
-              onChange={(e) => {
-                if (e.target.checked) {
-                  setSelectedGoals([...selectedGoals, goal.id]);
-                } else {
-                  setSelectedGoals(selectedGoals.filter((id) => id !== goal.id));
-                }
-              }}
+              key={
+                selectedGoals.includes(goal.id)
+                  ? goal.id
+                  : `${goal.id}-unchecked`
+              }
+              defaultSelected={selectedGoals.includes(goal.id)}
             />
           </div>
         ))}
